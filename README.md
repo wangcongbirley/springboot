@@ -10,15 +10,14 @@ springboot 集成其他组件。
 #### 上传
 *前端input[file]原生上传。*
 
-`<div style="margin-top:5px;">
+`
+<div style="margin-top:5px;">
   <input type="file" id="uploadFile" style="display:none;" />
   <input type="text" id="filename" />
   <button class="btn btn_default" id="selectBtn" onclick="javascript:$('#uploadFile').click();">浏览...</button>
-</div>`
-
-`var f=document.getElementById("files");`
-
-`			$("#uploadFile").change(function() {
+</div>
+var f=document.getElementById("files");
+	$("#uploadFile").change(function() {
 				var fileList = $("#uploadFile").get(0).files;
 				var filename = fileList[0].name;
 				var fs = filename.split(".");
@@ -65,8 +64,8 @@ springboot 集成其他组件。
 					}
 				};
 				xhr.send(fd);
-			});`
-
+			});
+`
 JSON 数组，各种格式。Map，Bean，字符串，数组，混用。
 
 外键查询，
