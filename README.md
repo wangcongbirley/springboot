@@ -69,3 +69,40 @@ var f=document.getElementById("files");
 JSON 数组，各种格式。Map，Bean，字符串，数组，混用。
 
 外键查询，
+
+### 流下载
+
+读取本地二进制文件流，通过浏览器下载。
+
+`	public void modelSourceUrl(String fileId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		OutputStream os = null;
+		InputStream is = null;
+		ByteArrayOutputStream bos = null;
+		byte[] b = null;
+		String path = FILE_UPLOAD_DIR + File.separator + fileId;
+		File file = new File(path);
+		File[] tempList = file.listFiles();
+		logger.info(tempList[0].toString());
+		try {
+			byte[] buffer = new byte[1024];
+			int len = 0;
+			is=new FileInputStream(tempList[0]);
+			bos = new ByteArrayOutputStream();
+			while ((len = is.read(buffer)) != -1) {
+				bos.write(buffer, 0, len);
+			}
+			bos.flush();
+			b = bos.toByteArray();
+			os = response.getOutputStream();
+            response.addHeader("Content-Disposition", "attachment;filename=" + new String(tempList[0].getName().getBytes()));
+            response.addHeader("Content-Length", "" + tempList[0].length());
+            response.setContentType("application/octet-stream");
+			os.write(b, 0, b.length);
+			os.flush();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (is != null) {
+				 is.close();
+			}
+		}`
