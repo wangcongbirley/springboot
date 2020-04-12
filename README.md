@@ -74,7 +74,8 @@ JSON 数组，各种格式。Map，Bean，字符串，数组，混用。
 
 读取本地二进制文件流，通过浏览器下载。
 
-`	public void modelSourceUrl(String fileId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+`	
+public void modelSourceUrl(String fileId, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		OutputStream os = null;
 		InputStream is = null;
 		ByteArrayOutputStream bos = null;
@@ -105,4 +106,5 @@ JSON 数组，各种格式。Map，Bean，字符串，数组，混用。
 			if (is != null) {
 				 is.close();
 			}
-		}`
+		}
+`
