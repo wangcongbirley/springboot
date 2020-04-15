@@ -110,3 +110,5 @@ public void modelSourceUrl(String fileId, HttpServletRequest request, HttpServle
 `
 
 项目中遇到技术难点，一直调试失败。暂时放一放，做其他的，保持项目进度。
+
+vue参数设置
