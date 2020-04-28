@@ -114,3 +114,12 @@ public void modelSourceUrl(String fileId, HttpServletRequest request, HttpServle
 vue参数设置
 
 vue组件控制v-if v-on @change @click :sync
+
+### excel下载
+
+Excel下载中，有HSSFWorkbook和XSSFWorkbook，它们的区别是：
+
+HSSF对应97-2003版本的Excel，XSSF则对应2007版本的Excel。
+
+
+
