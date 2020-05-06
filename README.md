@@ -123,3 +123,8 @@ HSSF对应97-2003版本的Excel，XSSF则对应2007版本的Excel。
 
 ### springboot启动初始化数据库
 
+classpath:
+ 
+1.  src 路径下的文件 在编译后都会放到 WEB-INF/classes 路径下。默认classpath 就是指这里。
+ 
+2. 用maven构建 项目时，resources 目录就是默认的classpath
