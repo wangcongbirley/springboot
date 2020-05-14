@@ -16,6 +16,8 @@ springboot 集成其他组件。
   <input type="text" id="filename" />
   <button class="btn btn_default" id="selectBtn" onclick="javascript:$('#uploadFile').click();">浏览...</button>
 </div>
+
+
 var f=document.getElementById("files");
 	$("#uploadFile").change(function() {
 				var fileList = $("#uploadFile").get(0).files;
