@@ -130,3 +130,6 @@ classpath:
 1.  src 路径下的文件 在编译后都会放到 WEB-INF/classes 路径下。默认classpath 就是指这里。
  
 2. 用maven构建 项目时，resources 目录就是默认的classpath
+
+### 日志埋点
+页面埋点，传数据到后台，用于数据采集，分析访问的PV/UV量。
