@@ -117,6 +117,8 @@ vue参数设置
 
 vue组件控制v-if v-on @change @click :sync
 
+vue-router路由
+
 ### excel下载
 
 Excel下载中，有HSSFWorkbook和XSSFWorkbook，它们的区别是：
