@@ -148,3 +148,14 @@ classpath:
 ## 组件传参
 vue父子组件传对象/数组/字符串。
 子组件监听watch。
+方案四(兄弟组件数据变化的刷新)
+在数据添加成功的回调函数中先跳转到一个假路由，再跳转回来
+let NewPage = "_empty" + "?time=" + new Date().getTime() / 500;
+this.$router.push(NewPage);
+this.$router.go(-1);
+1
+2
+3
+因为这时数据已经添加到数据库中，我们只需要在 updated 生命周期中重新获取一下即可
+这种方式也不会造成页面的闪烁，就像直接显示出来了一样
+
