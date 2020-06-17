@@ -159,3 +159,5 @@ this.$router.go(-1);
 因为这时数据已经添加到数据库中，我们只需要在 updated 生命周期中重新获取一下即可
 这种方式也不会造成页面的闪烁，就像直接显示出来了一样
 
+#ORACLE和MySQL
+oracle建表语句sql和mysql不一样。
