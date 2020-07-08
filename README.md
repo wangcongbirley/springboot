@@ -1,14 +1,12 @@
 # springboot
-做项目过程中，记录问题与解决方案
 
-yml文件格式：key:+空格+value
+此repository开通的目的是记录软件工程实践中，疑难杂症及解决方案。
 
-pom文件，maven配置。
-
-springboot 集成其他组件。
+## 服务器
 
 #### 上传
-*前端input[file]原生上传。*
+
+*前端input[file]原生上传，源码如下：*
 
 `
 <div style="margin-top:5px;">
@@ -70,11 +68,15 @@ var f=document.getElementById("files");
 `
 JSON 数组，各种格式。Map，Bean，字符串，数组，混用。
 
-外键查询，
+上传文件的唯一性 及 重复上传，采用增量上传。
+
+### 文件服务器NAS
+
+将NAS挂载到服务器，作为存储空间。图片和模型文件都上传到NAS上。NAS挂载后用唯一路径访问。
 
 ### 流下载
 
-读取本地二进制文件流，通过浏览器下载。
+读取本地二进制文件流，通过浏览器下载。源码如下：
 
 `	
 public void modelSourceUrl(String fileId, HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -111,8 +113,6 @@ public void modelSourceUrl(String fileId, HttpServletRequest request, HttpServle
 		}
 `
 
-项目中遇到技术难点，一直调试失败。暂时放一放，做其他的，保持项目进度。
-
 vue参数设置
 
 vue组件控制v-if v-on @change @click :sync
@@ -133,19 +133,32 @@ classpath:
  
 2. 用maven构建 项目时，resources 目录就是默认的classpath
 
+yml文件格式：key:+空格+value
+
+pom文件，maven配置。
+
+springboot 集成其他组件。
+
 ### 日志埋点
+
 页面埋点，传数据到后台，用于数据采集，分析访问的PV/UV量。
 
-### 文件服务器NAS
-图片和模型文件上传到NAS上，前提是NAS挂载到应用服务器了。
+### 云龙部署
 
-## BUG问题
+#ORACLE和MySQL
+oracle建表语句sql和mysql不一样。
+
+
+### BUG问题
 上传NAS获取不到模型文件
 
-## 权限设计
+### 权限设计
 三种权限，权限粒度细分到页面。
 
-## 组件传参
+## 客户端
+
+### 组件传参
+
 vue父子组件传对象/数组/字符串。
 子组件监听watch。
 方案四(兄弟组件数据变化的刷新)
@@ -159,10 +172,6 @@ this.$router.go(-1);
 因为这时数据已经添加到数据库中，我们只需要在 updated 生命周期中重新获取一下即可
 这种方式也不会造成页面的闪烁，就像直接显示出来了一样
 
-#ORACLE和MySQL
-oracle建表语句sql和mysql不一样。
+## 总结
 
-## 云龙部署
-
-### 上传
-上传文件的唯一性 及 重复上传，采用增量上传。
+项目中遇到技术难点，一直调试失败。暂时放一放，做其他的，保持项目进度。
